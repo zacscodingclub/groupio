@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @test = "Hello World"
+    if current_user
+
+    end
   end
 end
