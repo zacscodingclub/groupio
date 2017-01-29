@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <li class="nav-item">
+    <a ui-sref="user" class="nav-link" id="<%= current_user.email %>">Welcome <%= current_user.first_name %>!</a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Logout", destroy_user_session_path, class:"nav-link", :method => 'delete' %>
+  </li>
+<% else %>
+  <%= link_to "Login", new_user_session_path, class:"btn btn-success" %>
+
+  <%= link_to "Signup", new_user_registration_path, class:"btn btn-primary" %>
+<% end %>
